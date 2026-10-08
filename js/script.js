@@ -49,18 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const subMenuIcon = document.querySelector('.submenu__icon');
     const subMenu = document.querySelector('.submenu__list');
 
-    // Header scroll
+    
+
     if (header) {
         const scrollThreshold = 100;
 
-        window.addEventListener('scroll', () => {
+        const checkScroll = () => {
             if (window.scrollY >= scrollThreshold) {
                 header.classList.add('_header-scroll');
             } else {
                 header.classList.remove('_header-scroll');
             }
-        });
-    }
+        };
+
+        // Перевірка одразу після завантаження
+        checkScroll();
+
+        // Перевірка під час скролу
+        window.addEventListener('scroll', checkScroll);
+        }
+    });
 
     // Burger menu
     if (burgerMenu && menu) {
