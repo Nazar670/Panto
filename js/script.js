@@ -49,26 +49,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const subMenuIcon = document.querySelector('.submenu__icon');
     const subMenu = document.querySelector('.submenu__list');
 
-    
-
+    // Header scroll
     if (header) {
         const scrollThreshold = 100;
 
         const checkScroll = () => {
-            if (window.scrollY >= scrollThreshold) {
-                header.classList.add('_header-scroll');
-            } else {
-                header.classList.remove('_header-scroll');
-            }
+            header.classList.toggle(
+                '_header-scroll',
+                window.scrollY >= scrollThreshold
+            );
         };
 
-        // Перевірка одразу після завантаження
         checkScroll();
-
-        // Перевірка під час скролу
-        window.addEventListener('scroll', checkScroll);
-        }
-    });
+        window.addEventListener('scroll', checkScroll, { passive: true });
+    }
 
     // Burger menu
     if (burgerMenu && menu) {
@@ -90,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const hero = document.querySelector('.hero');
