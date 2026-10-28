@@ -593,7 +593,7 @@ body {
   .hero__hotspot__colors {
     position: absolute;
     left: 1.875rem;
-    bottom: 11.5625rem;
+    bottom: 0.3125rem;
   }
 }
 .hero__hotspot__circle {
