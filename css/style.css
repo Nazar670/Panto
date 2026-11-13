@@ -1725,7 +1725,7 @@ body {
 }
 @media (max-width: 47.9988rem) {
   .footer__bottom {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 1.25rem;
   }
 }
@@ -1989,9 +1989,10 @@ body {
 .bottom-footer__list {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  column-gap: 2.5rem;
+  row-gap: 1.25rem;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .bottom-footer__item {
   flex-shrink: 0;
